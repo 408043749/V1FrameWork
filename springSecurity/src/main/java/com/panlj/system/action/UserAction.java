@@ -3,6 +3,7 @@ package com.panlj.system.action;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
@@ -10,8 +11,6 @@ import javax.persistence.criteria.Root;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,12 +27,10 @@ public class UserAction extends ModelAction<User>{
 	
 	@RequestMapping("list")
 	public String list(HttpServletRequest request,HttpServletResponse response,Model model){
-		Page<User>  page=  userDao.findAll(buildSpecification(),buildPageRequest());
-		 List<User> userList =  userDao.findAll(buildSpecification(),buildPageRequest()).getContent();
-		 userList = userDao.findAll(buildPageRequest()).getContent();
-		 //List<User> userList = (List<User>) userDao.findAll();
-		 System.out.println(userList.toString());
+		 List<User> userList =  null;
+		 userList =  findAll(buildSpecification(), buildPageRequest(request), userDao,model) .getContent();
 		 model.addAttribute("userList", userList);
+		 pageHandle(model);//传递分页参数
 		return "list";
 	}
 	

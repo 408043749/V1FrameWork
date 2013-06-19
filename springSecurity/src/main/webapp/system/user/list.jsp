@@ -12,6 +12,9 @@
 </head>
 
 <body>
+	<div>
+		<form id="model-form-list" action="<c:url value="/system/user/list" />"></form>
+	</div>
 	<div class="row-fluid div-list">
 		<table class="table table-condensed table-hover">
 			<thead>
@@ -55,14 +58,12 @@
 				<div class="ui-table-footer-list"><a class="btn-delete" style="display: block;" ></a></div>
 				
 				<div class="ui-table-footer-pager">
-						<span class="badge badge-inverse">«</span>
-						<span class="badge badge-important">1</span>
-						<span class="badge badge-info">2</span>
-						<span class="badge badge-info">3</span>
-						<span class="badge badge-info">4</span>
-						<span class="badge badge-info">5</span>
-						<span class="badge badge-info">6</span>
-						<span class="badge badge-inverse">»</span>
+						<span ">共${totalPage}页</span>
+						<span class="badge badge-inverse" data_page="1">«</span>
+						<c:forEach items="${pageRage }" var="item" varStatus="status" >
+						<span class="badge ${item==pageNumber?'badge-important':'badge-info' }"  data_page="${item}" >${item}</span>
+						</c:forEach>
+						<span class="badge badge-inverse" data_page="${totalPage}">»</span>
 				</div>
 				
 		</div>
@@ -74,6 +75,10 @@
 		$(this).find('.table-tr-td-opera').css('visibility','visible');
 	},function(){
 		$(this).find('.table-tr-td-opera').css('visibility','hidden');
+	});
+	
+	$('.badge').click(function(){
+		$('#body-east').load($('#model-form-list').attr("action"),{pageNumber:$(this).attr('data_page')});
 	});
 </script>
 </html>

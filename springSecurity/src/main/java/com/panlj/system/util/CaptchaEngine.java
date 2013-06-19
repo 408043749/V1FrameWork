@@ -72,6 +72,7 @@ public class CaptchaEngine extends ListImageCaptchaEngine {
 	}
 	
 	public static void main(String[] args) {
+		new CaptchaEngine();
 	}
 
 }

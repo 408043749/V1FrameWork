@@ -215,20 +215,43 @@
 			    </plugin>
 			    
 				<plugin>
-			        <groupId>org.mortbay.jetty</groupId>
-			        <artifactId>maven-jetty-plugin</artifactId>
-			        <configuration>
-			          <!-- http://docs.codehaus.org/display/JETTY/Maven+Jetty+Plugin -->
-			          <contextPath>/</contextPath>
-			          <scanIntervalSeconds>0</scanIntervalSeconds>
-			          <connectors>
-			            <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
-			              <port>8080</port>
-			              <maxIdleTime>60000</maxIdleTime>
-			            </connector>
-			          </connectors>
-			        </configuration>
-			      </plugin>
+					<groupId>org.mortbay.jetty</groupId>
+					<artifactId>jetty-maven-plugin</artifactId>
+					<!-- <version>8.1.2.v20120308</version> -->
+					<version>7.6.1.v20120215</version>
+					<configuration>
+						<scanIntervalSeconds>0</scanIntervalSeconds>
+						<webAppConfig>
+							<contextPath>/</contextPath>
+							<defaultsDescriptor>src/main/resources/jetty/webdefault.xml</defaultsDescriptor>
+						</webAppConfig>
+						<systemProperties>
+							<systemProperty>
+								<name>org.eclipse.jetty.xml.XmlParser.Validating</name>
+								<value>false</value>
+							</systemProperty>
+						</systemProperties>
+					</configuration>
+				</plugin>
+				
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>build-helper-maven-plugin</artifactId>
+					<version>1.7</version>
+					<configuration>
+						<sources>
+							<source>target\generated-sources\apt</source>
+							<source>target\generated-sources\apt-test</source>
+						</sources>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<compilerArgument>-proc:none</compilerArgument>
+					</configuration>
+				</plugin>
 			</plugins>
 		</pluginManagement>    
     

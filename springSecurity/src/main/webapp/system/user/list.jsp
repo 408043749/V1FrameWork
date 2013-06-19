@@ -12,24 +12,49 @@
 </head>
 
 <body>
-	<div>
-		<form id="model-form-list" action="<c:url value="/system/user/list" />"></form>
-	</div>
+
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+ 
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+ 
+      <!-- Be sure to leave the brand out there if you want it shown -->
+      <a class="brand" href="#">Project name</a>
+ 
+      <!-- Everything you want hidden at 940px or less, place within here -->
+      <div class="nav-collapse collapse">
+        <!-- .nav, .navbar-search, .navbar-form, etc -->
+      </div>
+ 
+    </div>
+  </div>
+</div>
 	<div class="row-fluid div-list">
 		<table class="table table-condensed table-hover">
-			<thead>
-				<tr >
-					<th width="15px;"></th>
-					<th>序号</th>
-					<th>姓名</th>
-					<th>角色</th>
-					<th>&nbsp;</th>
-				</tr>
-			</thead>
-		  <c:forEach items="${userList}" var="item" varStatus="status" >
+			<form id="model-form-list" action="<c:url value="/system/user/list" />" style="position: relative;">
+				<thead>
+					<tr >
+						<th width="15px;"></th>
+						<th>序号</th>
+						<th>
+							    姓名
+						</th>
+						<th>角色</th>
+						<th>&nbsp;</th>
+					</tr>
+				</thead>
+			</form>
+		
+		  <c:forEach items="${rows}" var="item" varStatus="status" >
 			<tr class="${status.count%2==0?'success':'odd'}">
 				<td><input type="checkbox" value="${item.id }" /> </td>
-				<td>${status.count }</td>
+				<td>${(pageNumber-1)*pagzSize+(status.count) }</td>
 				<td>${item.name } <c:out value=""></c:out></td>
 				<td>${item.name }</td>
 				<td>
@@ -40,7 +65,7 @@
 	   		</tr>
 		  </c:forEach>
 		  
-		  <c:forEach step="1" begin="${fn:length(userList)}" end="14" varStatus="status" >
+		  <c:forEach step="1" begin="${fn:length(rows)}" end="14" varStatus="status" >
 			<tr class="${status.count%2==0?'success':'odd'}">
 				<td>&nbsp;</td>
 				<td>&nbsp;</td>
@@ -50,6 +75,7 @@
 	   		</tr>
 		  </c:forEach>
 		</table>
+
 		
 		<div class="ui-table-footer ">
 				<div class="ui-table-footer-list"><input type="checkbox" /></div>
@@ -65,9 +91,7 @@
 						</c:forEach>
 						<span class="badge badge-inverse" data_page="${totalPage}">»</span>
 				</div>
-				
 		</div>
-				<div height="100px"><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></div>
 	</div>
 </body>
 <script type="text/javascript">

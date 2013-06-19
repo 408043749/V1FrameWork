@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.objectFactory.spring.autoWire" value="type" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+	
+    <!-- <package name="default" namespace="/" extends="struts-default">
+
+       <default-action-ref name="index" />
+
+        <global-results>
+            <result name="error">/error.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+
+        <action name="index">
+            <result name="success">/index.jsp</result>
+        </action>
+    </package>
+-->
+	<package name="system" namespace="/system"  extends="struts-default">
+		<action name="*_*" method="{2}"
+			class="system.action.{1}Action">
+			<result name="success">/jsp/{1}/{2}.jsp</result>
+		</action>
+	</package>
+	<include file="struts/security.xml"  /> 
+    <!-- Add packages here -->
+
+<package name="example" namespace="/example" extends="struts-default">
+
+        <action name="HelloWorld" class="example.HelloWorld">
+            <result>/example/HelloWorld.jsp</result>
+        </action>
+
+        <action name="Login_*" method="{1}" class="example.Login">
+            <result name="input">/example/Login.jsp</result>
+            <result type="redirectAction">Menu</result>
+        </action>
+
+        <action name="*" class="example.ExampleSupport">
+            <result>/example/{1}.jsp</result>
+        </action>
+
+        <!-- Add actions here -->
+    </package>
+</struts>

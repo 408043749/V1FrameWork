@@ -1,0 +1,135 @@
+::-webkit-scrollbar { width: 6px; height: 6px;}   
+::-webkit-scrollbar-track-piece { background-color: #000;}   
+::-webkit-scrollbar-thumb{height: 50px; background-color: #666; -webkit-border-radius: 3px;}
+
+
+body .div-main-left , body .div-main-center, body .div-main-right{
+	border: solid 1px #333 ;
+	min-height: 500px;
+	max-height: 500px;
+	height:auto;
+	box-shadow: #000 10px 10px 10px;
+	border-radius:10px;
+	overflow: auto;
+}
+
+table thead th {
+	font-weight: bold;
+	font-size: 12px;
+	color: #333333;
+	border-right: 1px solid #fefefe;;
+	background-color: #d9d9d9;
+	background:	url(/resources/images/util/img-list.png) 0px -828px repeat-x;
+}
+
+table tr{
+	background-color: white;
+}
+
+
+.div-thumbnail{
+	margin-top: 10px;
+}
+
+.div-list{
+	border:1px solid #333;
+}
+
+.note{
+	min-height: 150px;
+	background-color: #fff;
+	-webkit-transform:	rotate(-6deg);
+	box-shadow: #000 10px 10px 10px;
+}
+
+.line{
+	border:1px solid #333;
+	box-shadow: #000 0px -1px 0px;
+}
+.line-radius{
+	border:1px solid #333;
+	min-height:4px;
+	border-bottom:none;
+	box-shadow: #000 0px -1px 0px;
+	border-radius: 4px 4px 0 0;
+}
+
+.bg-note-color-yellow{
+	background-color: rgb(172, 166, 38);
+}
+.bg-note-color-blue{
+	background-color: rgb(7, 73, 90);
+}
+.bg-note-color-green{
+	background-color: rgb(57, 117, 1);
+}
+
+.softmodel .thumbnail{
+	position:relative; 
+}
+.softmodel .thumbnail .carousel-caption{
+	display: none;
+	background: rgba(211, 182, 151, 0.1);
+}
+.softmodel .thumbnail .carousel-caption a{
+	color: yellow;
+}
+
+.framebody-center .a-model{
+	font-size: 30px;
+	margin-left: 10px;
+}
+
+.ui-theader{
+	position: relative;
+	height: 29px;
+}
+.ui-thead-list{
+	position: absolute;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	top: 0;
+	left:15px; 
+	padding: 0 15px;
+}
+
+.ui-table-footer{
+	background: url(/resources/images/util/img-list.png) 0px -780px repeat-x;
+	vertical-align: middle;
+	margin: 0px;
+	height: 40px;
+	border-top: 1px solid #d9d9d9;
+}
+
+.ui-table-footer-list{
+	float: left;
+	margin: 5px  0px 5px 10px;
+}
+.ui-table-footer-pager{
+	float: right;
+	padding: 5px 0px 0px 0px;
+}
+.btn-add{
+	background: url(/resources/images/util/img-list.png)  no-repeat -72px -516px;
+	width: 65px;
+	height: 25px;
+}
+.btn-delete{
+	background: url(/resources/images/util/img-list.png)  no-repeat -96px -480px;
+	width: 65px;
+	height: 25px;
+}
+.div-list table{
+	margin-bottom: 0;
+}
+
+
+.table-tr-td-opera{
+	visibility:hidden;
+	display:inline-block;
+	width: 30px;
+}
+.table-tr-td-opera :hover{
+	font-size: 20px;
+	font-weight: bolder;
+}

@@ -37,14 +37,12 @@
 	  </div>
 	</div>
 	
-	<div class="row-fluid" >
-	123<pre class="prettyprint linenums">&lt;a href="#" class="button button-rounded button-flat-primary button-large"&gt;press me&lt;/a&gt;
-&lt;a href="#" class="button button-rounded button-flat-primary"&gt;press me&lt;/a&gt;
-&lt;a href="#" class="button button-rounded button-flat-primary button-small"&gt;press me&lt;/a&gt;
-&lt;a href="#" class="button button-rounded button-flat-primary button-tiny"&gt;press me&lt;/a&gt;</pre>
+	<div class="row-fluid" style="background-color: #fff;">
+		<!-- 条件查询 -->
+		12312
 	</div>
 	
-	<div class="row-fluid div-list well" >
+	<div class="row-fluid div-list" style="" >
 		<table class="table table-condensed table-hover">
 			<form id="model-form-list" action="<c:url value="/system/user/list" />" style="position: relative;">
 				<thead>

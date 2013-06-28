@@ -22,12 +22,14 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </a>
-	 
+	
 	      <!-- Be sure to leave the brand out there if you want it shown -->
-	      <a class="brand" href="#">Project name</a>
+	      <a class="brand" href="#"><i class="icon-home"></i></a>
+	      <a class="brand"">»</a>
+	      <a class="brand" href="#"><font size="3">用户管理</font></a>
 	 
 	      <!-- Everything you want hidden at 940px or less, place within here -->
-	      <div class="nav-collapse collapse">12321312
+	      <div class="nav-collapse collapse">
 	        <!-- .nav, .navbar-search, .navbar-form, etc -->
 	      </div>
 	 
@@ -35,7 +37,14 @@
 	  </div>
 	</div>
 	
-	<div class="row-fluid div-list" >
+	<div class="row-fluid" >
+	123<pre class="prettyprint linenums">&lt;a href="#" class="button button-rounded button-flat-primary button-large"&gt;press me&lt;/a&gt;
+&lt;a href="#" class="button button-rounded button-flat-primary"&gt;press me&lt;/a&gt;
+&lt;a href="#" class="button button-rounded button-flat-primary button-small"&gt;press me&lt;/a&gt;
+&lt;a href="#" class="button button-rounded button-flat-primary button-tiny"&gt;press me&lt;/a&gt;</pre>
+	</div>
+	
+	<div class="row-fluid div-list well" >
 		<table class="table table-condensed table-hover">
 			<form id="model-form-list" action="<c:url value="/system/user/list" />" style="position: relative;">
 				<thead>

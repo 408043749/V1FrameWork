@@ -35,7 +35,7 @@
 	 
 	    </div>
 	  </div>
-	</div>
+	</div> 
 	
 	<div class="row-fluid" style="background-color: #fff;">
 		<!-- 条件查询 -->

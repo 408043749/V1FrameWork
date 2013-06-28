@@ -9,10 +9,14 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 	$(function(){
+		$('.frame-body').height($(document).height());
+		$('.div-main-left').height($('.frame-body').height()-126);
+		$('.div-main-center').height($('.frame-body').height()-126);
+		$('.div-main-right').height($('.frame-body').height()-126);
 	});
 </script>
 </head>
-<body style="background-image: url('${pageContext.request.contextPath}/resources/images/left/bg-left.jpg');">
+<body style="background-image: url('${pageContext.request.contextPath}/resources/images/left/bg-left.jpg');height:100%}">
 	<!-- 头部 -->
 	<%@ include file="header.jsp" %>
 	

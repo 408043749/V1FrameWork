@@ -3,7 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
 
-<%@ include file="/common/js.jsp" %>
 
 <!DOCTYPE html>
 <html >
@@ -13,29 +12,30 @@
 
 <body>
 
-<div class="navbar">
-  <div class="navbar-inner">
-    <div class="container">
- 
-      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
- 
-      <!-- Be sure to leave the brand out there if you want it shown -->
-      <a class="brand" href="#">Project name</a>
- 
-      <!-- Everything you want hidden at 940px or less, place within here -->
-      <div class="nav-collapse collapse">
-        <!-- .nav, .navbar-search, .navbar-form, etc -->
-      </div>
- 
-    </div>
-  </div>
-</div>
-	<div class="row-fluid div-list">
+	<div class="navbar" style="margin-bottom: 0px;border-bottom: 0px;">
+	  <div class="navbar-inner">
+	    <div class="container">
+	 
+	      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+	      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </a>
+	 
+	      <!-- Be sure to leave the brand out there if you want it shown -->
+	      <a class="brand" href="#">Project name</a>
+	 
+	      <!-- Everything you want hidden at 940px or less, place within here -->
+	      <div class="nav-collapse collapse">12321312
+	        <!-- .nav, .navbar-search, .navbar-form, etc -->
+	      </div>
+	 
+	    </div>
+	  </div>
+	</div>
+	
+	<div class="row-fluid div-list" >
 		<table class="table table-condensed table-hover">
 			<form id="model-form-list" action="<c:url value="/system/user/list" />" style="position: relative;">
 				<thead>

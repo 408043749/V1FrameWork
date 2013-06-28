@@ -7,12 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div id="body-east" class="span9 ">
+	<div id="body-east" class="span9 body-east">
 		<div class="row-fluid">
-			<div id="body-center" class="span9">
+			<div id="body-center" class="span9 div-main-center">
 				<%@ include file="center.jsp" %>
 			</div>
-			<div id="body-right" class="span3">
+			<div id="body-right" class="span3 div-main-right">
 				<%@ include file="right.jsp" %>
 			</div>
 		</div>

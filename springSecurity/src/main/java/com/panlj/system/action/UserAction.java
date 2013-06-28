@@ -3,7 +3,6 @@ package com.panlj.system.action;
 import java.util.List;
 
 import javax.annotation.Resource;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;

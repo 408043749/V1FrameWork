@@ -47,7 +47,7 @@
 			</div>
 		</div>
 	
-	<div class="row-fluid div-main-center" >
+	<div class="row-fluid" >
 		<div class=" offset1 span10 offset1">
 			<div class="row-fluid">
 				<div class="span4 softmodel" style="text-align: center;">

@@ -4,42 +4,48 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
 
 
-<!DOCTYPE html>
-<html >
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-</head>
+	<div class="navbar frame-form-query-navbar" style="margin-bottom: 0px;border-bottom: 0px;">
+		<div class="navbar-inner">
+			<div class="container">
 
-<body>
+				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				<a class="btn btn-navbar" data-toggle="collapse"
+					data-target=".nav-collapse"> <span class="icon-bar"></span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span>
+				</a>
 
-	<div class="navbar" style="margin-bottom: 0px;border-bottom: 0px;">
-	  <div class="navbar-inner">
-	    <div class="container">
-	 
-	      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-	      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </a>
-	
-	      <!-- Be sure to leave the brand out there if you want it shown -->
-	      <a class="brand" href="#"><i class="icon-home"></i></a>
-	      <a class="brand"">»</a>
-	      <a class="brand" href="#"><font size="3">用户管理</font></a>
-	 
-	      <!-- Everything you want hidden at 940px or less, place within here -->
-	      <div class="nav-collapse collapse">
-	        <!-- .nav, .navbar-search, .navbar-form, etc -->
-	      </div>
-	 
-	    </div>
-	  </div>
+				<!-- Be sure to leave the brand out there if you want it shown -->
+				<a class="brand" href="#"><i class="icon-home"></i></a> <a
+					class="brand"">»</a> <a class="brand" href="#"><font size="3">用户管理</font></a>
+
+				<!-- Everything you want hidden at 940px or less, place within here -->
+				<div class="nav-collapse collapse">
+					<!-- .nav, .navbar-search, .navbar-form, etc -->
+				</div>
+				<a class="brand icon-circle-arrow-down" style="float: right;" href="#"></a>
+			</div>
+		</div>
 	</div> 
 	
-	<div class="row-fluid" style="background-color: #fff;">
+	<div class="frame-form-query-condition row-fluid" style="background-color: #fff;padding: 10px;display:none;">
 		<!-- 条件查询 -->
-		12312
+		<div class="input-prepend span4">
+			<span class="add-on">姓名：</span>
+		    <input class="span6" id="prependedInput" type="text" placeholder="Username">
+		</div>
+		<div class="input-prepend span4">
+			<span class="add-on">橘色：</span>
+		    <input class="span6" id="prependedInput" type="text" placeholder="Username">
+		</div>
+		<div class="input-prepend span4">
+			<span class="add-on">姓名：</span>
+		    <input class="span6" id="prependedInput" type="text" placeholder="Username">
+		</div>
+		
+		<div class="row-fluid">
+              <button type="button" class="span6 btn btn-mini  btn-primary">重　　　　置</button>
+              <button type="button" class="span6 btn btn-mini  btn-primary">查　　　　询</button>
+        </div>
 	</div>
 	
 	<div class="row-fluid div-list" style="" >
@@ -101,6 +107,8 @@
 		</div>
 	</div>
 </body>
+
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/common/js_frame.js" ></script>
 <script type="text/javascript">
 	$('.table-tr-td-opera').closest('tr').hover(function(){
 		$(this).find('.table-tr-td-opera').css('visibility','visible');
@@ -112,4 +120,3 @@
 		$('#body-east').load($('#model-form-list').attr("action"),{pageNumber:$(this).attr('data_page')});
 	});
 </script>
-</html>

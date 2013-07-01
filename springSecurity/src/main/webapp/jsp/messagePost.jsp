@@ -16,7 +16,7 @@
 			</tr>
 			
 			<tr>
-				<td>Body</td>
+				<td>Body1</td>
 				<td><form:textarea path="body"></form:textarea></td>
 			</tr>
 			

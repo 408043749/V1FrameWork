@@ -39,10 +39,6 @@ table tr{
 	margin-top: 10px;
 }
 
-.div-list{
-	border:1px solid #333;
-}
-
 .note{
 	min-height: 150px;
 	background-color: #fff;
@@ -151,4 +147,19 @@ table tr{
 
 .badge :hover{
 	background-color: green;
+}
+
+.container-list .frame-form-query-condition{
+	display:none;
+	padding: 10px 0px 10px;
+	background-color:  #e1e1e8;
+}
+.container-list .frame-form-query-navbar{
+	margin-bottom: 0px;
+	border-bottom: 0px;
+}
+
+.container-list .frame-form-list{
+	background-color: white;
+	width:100%;
 }

@@ -58,46 +58,83 @@
 		</div>
 		
 		<div class="row-fluid frame-form-list">
-			<table class="table table-condensed table-hover" >
-				<form id="model-form-list" action="<c:url value="/system/user/list" />" style="position: relative;">
-					<thead>
-						<tr >
-							<th width="15px;"></th>
-							<th>序号</th>
-							<th>
-								    姓名
-							</th>
-							<th>角色</th>
-							<th>&nbsp;</th>
-						</tr>
-					</thead>
-				</form>
-			
-			  <c:forEach items="${rows}" var="item" varStatus="status" >
-				<tr class="${status.count%2==0?'success':'odd'}">
-					<td><input type="checkbox" value="${item.id }" /> </td>
-					<td>${(pageNumber-1)*pagzSize+(status.count) }</td>
-					<td>${item.name } <c:out value=""></c:out></td>
-					<td>${item.name }</td>
-					<td>
-						<a href="#" class="table-tr-td-opera" title="查看" ><i class="icon-plus"></i></a>
-						<a href="#" class="table-tr-td-opera" title="编辑" ><i class="icon-edit"></i></a>
-						<a href="#" class="table-tr-td-opera" title="删除" ><i class="icon-remove"></i></a>
-					</td>
-		   		</tr>
-			  </c:forEach>
-			  
-			  <c:forEach step="1" begin="${fn:length(rows)}" end="14" varStatus="status" >
-				<tr class="${status.count%2==0?'success':'odd'}">
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-		   		</tr>
-			  </c:forEach>
-			</table>
-	
+			<div class="row-fluid frame-form-list-tableDiv">
+				<table class="table table-condensed table-hover">
+					<form id="model-form-list" action="<c:url value="/system/user/list" />" style="position: relative;">
+						<thead>
+							<tr >
+								<th width="15px;"></th>
+								<th>序号</th>
+								<th>
+									    姓名
+								</th>
+								<th>角色</th>
+								<th>&nbsp;</th>
+							</tr>
+						</thead>
+					</form>
+				
+				  <c:forEach items="${rows}" var="item" varStatus="status" >
+					<tr class="${status.count%2==0?'success':'odd'}">
+						<td><input type="checkbox" value="${item.id }" /> </td>
+						<td>${(pageNumber-1)*pagzSize+(status.count) }</td>
+						<td>${item.name } <c:out value=""></c:out></td>
+						<td>${item.name }</td>
+						<td>
+							<a href="#" class="table-tr-td-opera" title="查看" ><i class="icon-plus"></i></a>
+							<a href="#" class="table-tr-td-opera" title="编辑" ><i class="icon-edit"></i></a>
+							<a href="#" class="table-tr-td-opera" title="删除" ><i class="icon-remove"></i></a>
+						</td>
+			   		</tr>
+				  </c:forEach>
+				  
+				  <c:forEach step="1" begin="${fn:length(rows)}" end="14" varStatus="status" >
+					<tr class="${status.count%2==0?'success':'odd'}">
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+			   		</tr>
+				  </c:forEach>
+				</table>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+				1<br/>
+			</div>
 			
 			<div class="ui-table-footer ">
 					<div class="ui-table-footer-list"><input type="checkbox" /></div>
@@ -116,18 +153,12 @@
 			</div>
 		</div>
 	</div>
+	
 </body>
 </html>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/common/js_frame.js" ></script>
 <script type="text/javascript">
-	$('.table-tr-td-opera').closest('tr').hover(function(){
-		$(this).find('.table-tr-td-opera').css('visibility','visible');
-	},function(){
-		$(this).find('.table-tr-td-opera').css('visibility','hidden');
-	});
-	
-	$('.badge').click(function(){
-		$('#body-east').load($('#model-form-list').attr("action")+" .frame-form-list",{pageNumber:$(this).attr('data_page')},function(responseText, textStatus, XMLHttpRequest){
-		});
-	});
+$(function(){
+
+});
 </script>

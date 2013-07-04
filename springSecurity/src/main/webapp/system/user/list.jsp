@@ -2,6 +2,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <%-- <div class="container container-list" style="background-color: #fff;">
 	<div class="navbar frame-form-query-navbar">
@@ -151,10 +153,10 @@
 
 	<div class="frame-form-query-condition  span3">
 		<div class="div-condition row-fluid">
-			<form id="model-form-list" action="<c:url value="/system/user/list" />" style="position: relative;">
+			<form:form id="model-form-list" cssClass="form-horizontal" action='/system/user/list' method="post" modelAttribute="user">
 				<div class="input-prepend ">
 					<span class="add-on">姓名：</span>
-				    <input class="span6" id="prependedInput" type="text" placeholder="Username">
+					<form:input path="name" cssClass="span6" placeholder="Username" />
 				</div>
 				<div class="input-prepend ">
 					<span class="add-on">姓名：</span>
@@ -166,7 +168,7 @@
 					<button type="button" class=" btn   btn-primary btn-reset" ><i class="icon-remove-sign"></i> 重置</button>
 	              	<button type="button" class=" btn   btn-primary btn-submit"  ><i class="icon-search"></i> 查询</button>
 				</div>
-			</form>
+			</form:form>
 		</div>
 	</div>
 	

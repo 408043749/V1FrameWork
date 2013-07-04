@@ -9,10 +9,7 @@
 
 	<div class="container-fluid">
 		<div class="row-fluid">
-			<div class="span2">
-				<!--Sidebar content-->1
-			</div>
-			<div class="span10" id="body-east">
+			<div class="span12" id="body-east">
 				
 			</div>
 		</div>

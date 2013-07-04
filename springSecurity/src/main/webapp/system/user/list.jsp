@@ -149,22 +149,42 @@
 	</div>
 </div> --%>
 
-	<div class="row-fluid frame-form-list">
+	<div class="frame-form-query-condition  span3">
+		<div class="div-condition row-fluid">
+			<form id="model-form-list" action="<c:url value="/system/user/list" />" style="position: relative;">
+				<div class="input-prepend ">
+					<span class="add-on">姓名：</span>
+				    <input class="span6" id="prependedInput" type="text" placeholder="Username">
+				</div>
+				<div class="input-prepend ">
+					<span class="add-on">姓名：</span>
+				   	<select class="span10">
+				   		<option>qdsfsdf</option>
+				   	</select>
+				</div>
+				<div class="input-prepend ">
+					<button type="button" class=" btn   btn-primary btn-reset" ><i class="icon-remove-sign"></i> 重置</button>
+	              	<button type="button" class=" btn   btn-primary btn-submit"  ><i class="icon-search"></i> 查询</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	
+	<div class="row-fluid frame-form-list span9">
 		<div class="row-fluid frame-form-list-tableDiv">
 			<table class="table table-condensed table-hover">
-				<form id="model-form-list" action="<c:url value="/system/user/list" />" style="position: relative;">
-					<thead>
-						<tr >
-							<th width="15px;"></th>
-							<th>序号</th>
-							<th>
-								    姓名
-							</th>
-							<th>角色</th>
-							<th>&nbsp;</th>
-						</tr>
-					</thead>
-				</form>
+				<thead>
+					<tr >
+						<th width="15px;"></th>
+						<th>序号</th>
+						<th>
+							    姓名
+						</th>
+						<th>角色</th>
+						<th>&nbsp;</th>
+					</tr>
+				</thead>
 			
 			  <c:forEach items="${rows}" var="item" varStatus="status" >
 				<tr class="${status.count%2==0?'success':'odd'}">
@@ -208,7 +228,7 @@
 			</div>
 		</div>
 	</div>
-
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/common/js_frame.js" ></script>
 <script type="text/javascript">
 $(function(){
 

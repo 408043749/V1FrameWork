@@ -8,16 +8,16 @@
 		//alert($('.frame-form-list-tableDiv').attr("max-height"));
 */
 		/**
-		 * ListÒ³Ãæ²éÑ¯Ìõ¼þÏÔÊ¾ºÍÒþ²Ø
+		 * ListÒ³ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		 */
 		$('.frame-form-query-navbar').delegate('.icon-circle-arrow-down','click',function(){
 			 $('.frame-form-query-condition').slideToggle('slow');
 		});
 		
 		/**
-		 * ListÒ³ÃæÁÐ±í²Ù×÷ÏÔÊ¾ºÍÒ»²Ø
+		 * ListÒ³ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ò»ï¿½ï¿½
 		 */
-		$('frame-form-list .table-tr-td-opera').closest('tr').hover(function(){
+		$('.frame-form-list .table-tr-td-opera').closest('tr').hover(function(){
 			$(this).find('.table-tr-td-opera').css('visibility','visible');
 		},function(){
 			$(this).find('.table-tr-td-opera').css('visibility','hidden');
@@ -25,10 +25,15 @@
 		
 		
 		/**
-		 * Ò³Ãæ·ÖÒ³Ä£¿éµã»÷ Òì²½¼ÓÔØlistÄÚÈÝÄ£¿é
+		 * Ò³ï¿½ï¿½ï¿½Ò³Ä£ï¿½ï¿½ï¿½ï¿½ ï¿½ì²½ï¿½ï¿½ï¿½ï¿½listï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½
 		 */
 		$('.frame-form-list').delegate('.badge','click',function(){
-			$('.frame-form-list').load($('#model-form-list').attr("action")+" .frame-form-list",{pageNumber:$(this).attr('data_page')},function(responseText, textStatus, XMLHttpRequest){
+			$('.frame-form-list').load($('#model-form-list').attr("action")+" .frame-form-list-tableDiv,.ui-table-footer",{pageNumber:$(this).attr('data_page')},function(responseText, textStatus, XMLHttpRequest){
+			});
+		});
+		$('.frame-form-query-condition').delegate('.btn-submit','click',function(){
+			var formdata = $(this).closest('form').serialize();
+			$('.frame-form-list').load($('#model-form-list').attr("action")+"?"+formdata+" .frame-form-list-tableDiv,.ui-table-footer",{pageNumber:$(this).attr('data_page')},function(responseText, textStatus, XMLHttpRequest){
 			});
 		});
 		

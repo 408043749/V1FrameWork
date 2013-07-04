@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/lib/FortAwesome/css/font-awesome.min.css" >
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/lib/jquery/jquery-1.9.1.min.js" ></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/lib/bootstrap/js/bootstrap.min.js" ></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/common/js_frame.js" ></script>
 </head>
 <body>
 </body>

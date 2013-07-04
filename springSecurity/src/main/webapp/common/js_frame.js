@@ -1,9 +1,12 @@
 
 	$(function(){
-		$('.frame-form-list-tableDiv').attr("max-height","70%");
-		$('.frame-form-list-tableDiv').attr("height","70%");
-		alert($('.frame-form-list-tableDiv').height());
 
+		/*$('.container-list').height($('.div-main-center').height());
+		$('.frame-form-list-tableDiv').attr("height","70px");
+		//$('.frame-form-list-tableDiv').attr("max-height","70");
+		//alert($('.frame-form-list-tableDiv').height());
+		//alert($('.frame-form-list-tableDiv').attr("max-height"));
+*/
 		/**
 		 * List页面查询条件显示和隐藏
 		 */

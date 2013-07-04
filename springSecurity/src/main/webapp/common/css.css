@@ -1,5 +1,5 @@
 ::-webkit-scrollbar { width: 6px; height: 6px;}   
-::-webkit-scrollbar-track-piece { background-color: #000;}   
+::-webkit-scrollbar-track-piece { background-color: none;}   
 ::-webkit-scrollbar-thumb{height: 50px; background-color: #666; -webkit-border-radius: 3px;}
 
 
@@ -98,10 +98,9 @@ table tr{
 }
 
 .ui-table-footer{
-	position:relative;
 	background: url(/resources/images/util/img-list.png) 0px -780px repeat-x;
 	vertical-align: middle;
-	margin: 0px;
+	margin-bottom: 0px;
 	height: 40px;
 	border-top: 1px solid #d9d9d9;
 }
@@ -152,6 +151,10 @@ table tr{
 
 .container-list{
 	position: relative;
+	height: 100%;
+	max-height:  100%;
+	background-color: #fff;
+	overflow: auto;
 }
 .container-list .frame-form-query-condition{
 	display:none;
@@ -167,15 +170,31 @@ table tr{
 	position: relative;
 	background-color: white;
 	width:100%;
-	height: 400px;
 }
 
 .container-list .frame-form-list .frame-form-list-tableDiv{
-	position:relative;
-	max-height: 60%;
-	top: 0;
+	position: relative;
+	padding: 15px;
+	overflow-y: auto;
 }
 
 .container-list .frame-form-list .frame-form-list-tableDiv table{
 	position:relative;	
+}
+
+.center-container{
+	position: relative;
+	height: 100%;
+	max-height:  70%;
+	background-color: #fff;
+	border-radius: 15px 5px 5px 15px;
+	box-shadow:0px 0px 50px #555;
+	transition: all 5s ease 0.3s;
+}
+
+.center-container .container-model-title-img{
+	position: absolute;
+	top: -15px;
+	left: 30px;
+	z-index: 3;
 }

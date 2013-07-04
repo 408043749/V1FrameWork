@@ -3,6 +3,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
 	<!-- 头部 -->
 	<header>
 		<div class="navbar navbar-inverse">
@@ -28,11 +35,13 @@
 			</div>
 		</div>
 	</header>
+</body>
 
-	<script type="text/javascript">
-		$(function(){
-			$('.menu-a').click(function(){
-				$('#body-east').load($(this).attr("data-url"));
-			});
+<script type="text/javascript">
+	$(function(){
+		$('.menu-a').click(function(){
+			$('#body-east').load($(this).attr("data-url"));
 		});
-	</script>
+	});
+</script>
+</html>

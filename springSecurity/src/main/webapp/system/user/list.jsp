@@ -151,6 +151,7 @@
 	</div>
 </div> --%>
 
+<div class="frame-container-list span12">
 	<div class="frame-form-query-condition  span3">
 		<div class="div-condition row-fluid">
 			<form:form id="model-form-list" cssClass="form-horizontal" action='/system/user/list' method="post" modelAttribute="user">
@@ -189,15 +190,15 @@
 				</thead>
 			
 			  <c:forEach items="${rows}" var="item" varStatus="status" >
-				<tr class="${status.count%2==0?'success':'odd'}">
+				<tr class="frame-form-list-table-tr ${status.count%2==0?'success':'odd'}">
 					<td><input type="checkbox" value="${item.id }" /> </td>
 					<td>${(pageNumber-1)*pagzSize+(status.count) }</td>
 					<td>${item.name } <c:out value=""></c:out></td>
 					<td>${item.name }</td>
 					<td>
-						<a href="#" class="table-tr-td-opera" title="查看" ><i class="icon-plus"></i></a>
-						<a href="#" class="table-tr-td-opera" title="编辑" ><i class="icon-edit"></i></a>
-						<a href="#" class="table-tr-td-opera" title="删除" ><i class="icon-remove"></i></a>
+						<a href="#" class="table-tr-td-opera link-view" title="查看" ><i class="icon-plus"></i></a>
+						<a href="#" class="table-tr-td-opera link-edit" title="编辑" ><i class="icon-edit"></i></a>
+						<a href="#" class="table-tr-td-opera link-delete" title="删除" ><i class="icon-remove"></i></a>
 					</td>
 		   		</tr>
 			  </c:forEach>
@@ -230,9 +231,9 @@
 			</div>
 		</div>
 	</div>
+</div>
+
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/common/js_frame.js" ></script>
 <script type="text/javascript">
 $(function(){
-
-});
 </script>

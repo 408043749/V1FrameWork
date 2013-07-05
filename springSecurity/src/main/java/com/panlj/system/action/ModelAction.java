@@ -121,26 +121,24 @@ public class ModelAction<T> {
 	public List<Integer> getPageRange(){
 		pageRage.clear();
 		int currentPage = getPageNumber();
-		
-		int min = 1;//最小值
-		int maxStep= 6;//除最小值 最大增加分页按钮个数
-		int totalCount = min+maxStep;//总按钮个数
-		
-		
-		if(totalPage<=totalCount || currentPage+(currentPage-1)<=totalCount){
-			//1,（总页数小于最大按钮数）或者（当前按钮数值+该数值前所有的按钮数量 ）时  显示所有页数
-			for(int i=min;i<=totalCount;i++){
-				pageRage.add(i);
-			}
-		}else if(currentPage+(currentPage-1)>=totalPage){
-			//2,当前按钮数值+该数值前所有的按钮数量>总页面数时  显示 总页面数 前的总按钮个数
-			for(int i=(totalPage-maxStep);i<=totalPage;i++){
+		int leftButtons= 3;
+		int maxButtons= 7;
+		if(totalPage<=maxButtons){
+			for(int i=1;i<=totalPage;i++){
 				pageRage.add(i);
 			}
 		}else{
-			for(int i=-3;i<=3;i++){
-				if(currentPage+i>0 && currentPage+i<=totalPage){
-					pageRage.add(currentPage+i);
+			if(currentPage-leftButtons>=1 && currentPage+leftButtons<=totalPage){
+				for(int i=currentPage-leftButtons;i<=currentPage+leftButtons;i++){
+					pageRage.add(i);
+				}
+			}else if(currentPage-leftButtons<1){
+				for(int i=1;i<=maxButtons;i++){
+					pageRage.add(i);
+				}
+			}else if(currentPage+leftButtons>totalPage){
+				for(int i=totalPage-maxButtons+1;i<=totalPage;i++){
+					pageRage.add(i);
 				}
 			}
 		}

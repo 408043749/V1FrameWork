@@ -39,27 +39,14 @@ public class UserAction extends ModelAction<User>{
 	}
 	
 	public Specification<User> buildSpecification(final User user) {
-		List<Specification<User>> listSpecifications = new ArrayList<Specification<User>>();
-		Specification<User> specification = new Specification<User>() {
-			
-			@Override
-			public Predicate toPredicate(Root<User> arg0, CriteriaQuery<?> arg1,
-					CriteriaBuilder arg2) {
-				// TODO Auto-generated method stub
+		return new Specification<User>() {
+			public Predicate toPredicate(Root<User> root,
+					CriteriaQuery<?> query, CriteriaBuilder cb) {
+				if(StringUtils.isNotEmpty(user.getName())){
+					query.where(cb.like(root.<String>get("name"), "%"+user.getName()+"%"));
+				}
 				return null;
 			}
 		};
-		
-		if(StringUtils.isNotEmpty(user.getName())) {
-			listSpecifications.add(new Specification<User>() {
-				public Predicate toPredicate(Root<User> root,
-						CriteriaQuery<?> arg1, CriteriaBuilder cb) {
-					// TODO Auto-generated method stub
-					return cb.like(root.<String>get("name"), user.getName());
-				}
-			});
-		}
-		
-		return listSpecifications.toArray(new Specification<User>[0]);
 	}
 }

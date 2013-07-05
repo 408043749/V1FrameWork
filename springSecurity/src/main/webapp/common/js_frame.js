@@ -7,33 +7,32 @@
 		//alert($('.frame-form-list-tableDiv').height());
 		//alert($('.frame-form-list-tableDiv').attr("max-height"));
 */
-		/**
-		 * Listҳ���ѯ������ʾ������
-		 */
-		$('.frame-form-query-navbar').delegate('.icon-circle-arrow-down','click',function(){
-			 $('.frame-form-query-condition').slideToggle('slow');
-		});
 		
 		/**
-		 * Listҳ���б������ʾ��һ��
+		 * List页面表格操作隐藏与显示
 		 */
-		$('.frame-form-list .table-tr-td-opera').closest('tr').hover(function(){
+		$('.frame-form-list').delegate('tr', 'mouseover', function(){
 			$(this).find('.table-tr-td-opera').css('visibility','visible');
-		},function(){
+		});
+		$('.frame-form-list').delegate('tr', 'mouseout', function(){
 			$(this).find('.table-tr-td-opera').css('visibility','hidden');
 		});
 		
-		
 		/**
-		 * ҳ���ҳģ���� �첽����list����ģ��
+		 * List页面分页点击事件
 		 */
 		$('.frame-form-list').delegate('.badge','click',function(){
-			$('.frame-form-list').load($('#model-form-list').attr("action")+" .frame-form-list-tableDiv,.ui-table-footer",{pageNumber:$(this).attr('data_page')},function(responseText, textStatus, XMLHttpRequest){
+			var formdata = $(this).closest('.frame-container-list').find('form').serialize();
+			$('.frame-form-list').load($('#model-form-list').attr("action")+"?"+formdata+" .frame-form-list-tableDiv,.ui-table-footer",{pageNumber:$(this).attr('data_page')},function(responseText, textStatus, XMLHttpRequest){
 			});
 		});
+		
+		/**
+		 * List页面查询按钮点击事件
+		 */
 		$('.frame-form-query-condition').delegate('.btn-submit','click',function(){
 			var formdata = $(this).closest('form').serialize();
-			$('.frame-form-list').load($('#model-form-list').attr("action")+"?"+formdata+" .frame-form-list-tableDiv,.ui-table-footer",{pageNumber:$(this).attr('data_page')},function(responseText, textStatus, XMLHttpRequest){
+			$('.frame-form-list').load($('#model-form-list').attr("action")+"?"+formdata+" .frame-form-list-tableDiv,.ui-table-footer",{pageNumber:1},function(responseText, textStatus, XMLHttpRequest){
 			});
 		});
 		

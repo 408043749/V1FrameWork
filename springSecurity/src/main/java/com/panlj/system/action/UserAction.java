@@ -17,6 +17,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.panlj.system.dao.UserDao;
 import com.panlj.system.domain.User;
@@ -33,9 +35,25 @@ public class UserAction extends ModelAction<User>{
 		 userList =  findAll(buildSpecification(user), buildPageRequest(request), userDao,model) .getContent();
 		 model.addAttribute("userList", userList);
 		 pageHandle(model);//传递分页参数
-		 System.out.println("user.name"+user.getName());
-		 model.addAttribute("user", new User());
+		 model.addAttribute("user", new User());//查询条件空对象
 		return "list";
+	}
+	
+	@RequestMapping("edit")
+	public String edit(Model model,@RequestParam Long id){
+		if(id!=null){
+			model.addAttribute("user", userDao.findOne(id));//查询条件空对象
+		}else{
+			model.addAttribute("user", new User());//查询条件空对象
+		}
+		
+		return "edit";
+	}
+	
+	@RequestMapping("save")
+	public @ResponseBody Object save(@ModelAttribute("user") User user,HttpServletRequest request,HttpServletResponse response,Model model){
+		userDao.save(user);
+		return "success";
 	}
 	
 	public Specification<User> buildSpecification(final User user) {

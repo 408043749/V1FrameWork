@@ -18,9 +18,9 @@
 		border-radius: 4px 4px 0 0;
 	}
 </style>
-<link href="${pageContext.request.contextPath}/resources/js/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-<script type="text/javascript"  src="${pageContext.request.contextPath}/resources/js/jquery/jquery-1.9.1.min.js"></script>
-<script type="text/javascript"  src="${pageContext.request.contextPath}/resources/js/bootstrap/js/bootstrap.min.js"></script>
+<link href="${pageContext.request.contextPath}/js/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<script type="text/javascript"  src="${pageContext.request.contextPath}/js/jquery/jquery-1.9.1.min.js"></script>
+<script type="text/javascript"  src="${pageContext.request.contextPath}/js/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" >
  	$(function(){
 		$('.login').click(function(){
@@ -68,7 +68,7 @@ function check(){
 </script>
 </head>
 
-<body style="height:10em;background-image: url('<c:url  value="/resources/images/footer/bg-footer-noise.jpg" />');">
+<body style="height:10em;background-image: url('<c:url  value="/images/footer/bg-footer-noise.jpg" />');">
 	<header  style="height:10em;background-color: #0769AD"></header>
 	<div style="height:10em;background-color: #0769AD">
 		<div class="container">
@@ -78,7 +78,7 @@ function check(){
 			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			    <h3  id="myModalLabel" style="color: white;">plj's blog</h3>
 			  </div>
-			  <div class="modal-body" style="background-image: url('<c:url  value="/resources/images/login/dark-grey-tile.png" />');">
+			  <div class="modal-body" style="background-image: url('<c:url  value="/images/login/dark-grey-tile.png" />');">
 			    <form class="form-horizontal" name="form1" id="form1" method="POST" action="<c:url value="/j_spring_security_check" />" >
 				  <div class="control-group">
 				    <label class="control-label " style="color: #ccc;" for="id">用户名</label>

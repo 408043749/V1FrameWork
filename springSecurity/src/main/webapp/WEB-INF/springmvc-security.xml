@@ -10,6 +10,10 @@
 	
 	<http pattern="/*.ico" security="none" />
 	<http pattern="/resources/**" security="none" />
+	<http pattern="/common/**" security="none" />
+	<http pattern="/lib/**" security="none" />
+	<http pattern="/images/**" security="none" />
+	<http pattern="/js/**" security="none" />
 	<http pattern="/index.jsp" security="none" />
 	<http pattern="/system/index" security="none" />
 	<http pattern="/image/captcha" security="none" />
@@ -17,9 +21,9 @@
 	<http auto-config="true">
 		<intercept-url pattern="/**" access="ROLE_ADMIN,ROLE_USER" />
 		
-		<form-login login-page="/index.jsp" default-target-url="/system/main/index" 
+		<form-login login-page="/index.jsp" default-target-url="/extApp/index.jsp" 
 			authentication-failure-url="/index.jsp?errorCode=1"  always-use-default-target="true" />
-		<logout logout-success-url="/index.jsp" />
+		<logout logout-success-url="/extApp/index.jsp" />
 	</http>
 	
 	<!-- 数据库配置 -->

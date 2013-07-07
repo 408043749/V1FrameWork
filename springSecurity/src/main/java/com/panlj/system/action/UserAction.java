@@ -1,5 +1,7 @@
 package com.panlj.system.action;
 
+import java.io.IOException;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,6 +56,23 @@ public class UserAction extends ModelAction<User>{
 	public @ResponseBody Object save(@ModelAttribute("user") User user,HttpServletRequest request,HttpServletResponse response,Model model){
 		userDao.save(user);
 		return "success";
+	}
+	
+	@RequestMapping("getUserJson")
+	public  void getUserJson(@RequestParam String query, Writer writer){
+		List<User> userList = userDao.findByUsernameLike("%"+query+"%");
+		List<String> userNameList = new ArrayList<String>();
+		for(User user:userList){
+			userNameList.add(user.getUsername());
+		}
+		String userStr = userNameList.toString();
+		if(userStr.length()>0) userStr = userStr.substring(1, userStr.length()-1);
+		try {
+			writer.write(userStr.toString());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public Specification<User> buildSpecification(final User user) {

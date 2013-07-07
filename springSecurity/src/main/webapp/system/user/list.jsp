@@ -175,7 +175,7 @@
 				<form:form id="model-form-list" cssClass="form-horizontal" action='/system/user/list' method="post" modelAttribute="user">
 					<div class="input-prepend ">
 						<span class="add-on">姓名：</span>
-						<form:input path="name" cssClass="span6" placeholder="Username" />
+						<form:input path="name" cssClass="span6 typeaheadlike" placeholder="Username"  data-url="/system/user/getUserJson" />
 					</div>
 					<div class="input-prepend ">
 						<span class="add-on">姓名：</span>
@@ -252,3 +252,26 @@
 	</div>
 </div>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/common/js_frame.js" ></script>
+<script type="text/javascript"  >
+$(function(){
+	/**
+	 * 模糊查询事件
+	 */
+	$('.typeaheadlike').typeahead({
+		source:function(query){
+			var dataSource = new Array();
+			$.ajax({ 
+			  url: "/system/user/getUserJson", 
+			  data:{query:query},
+			  async: false ,
+			  success:function(data){
+				  $.each(data.split(","),function(i){
+						dataSource.push(this);
+				  });
+			  }
+			});
+			return dataSource;
+		}
+	});
+});
+</script>

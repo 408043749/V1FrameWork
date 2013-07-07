@@ -16,6 +16,10 @@
 		$('.frame-form-list').delegate('tr', 'mouseout', function(){
 			$(this).find('.table-tr-td-opera').css('visibility','hidden');
 		});
+		
+		/**
+		 * 编辑按钮点击事件
+		 */
 		$('.frame-form-list').delegate('.link-edit', 'click', function(){
 			var id = $(this).closest('tr').find('.ck-sub').val();
 			var url = $(this).closest('.frame-container-list').find('.btn-add').attr('data-action');
@@ -23,10 +27,14 @@
 			$('#commonModal .modal-body').load( url,{id:id});
 		});
 		
+		/**
+		 * 保存按钮点击事件
+		 */
 		$('.frame-form-list').delegate('.btn-add', 'click', function(){
 			$('#commonModal').modal('show');
 			$('#commonModal .modal-body').load( $(this).attr('data-action'),{id:null});
 		});
+		
 		
 		/**
 		 * 模态对话框的保存按钮点击事件

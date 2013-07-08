@@ -12,9 +12,12 @@
 		http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
 		">
 	
+	
 	<!-- 注解扫描包 ACTION 必需定义这里 不然找不到地址404 -->
 	<context:component-scan base-package="com.panlj.system.action" /> 
 	<context:component-scan base-package="com.panlj.blog.action" /> 
+	
+	<mvc:annotation-driven />
 	
 	<!-- 映射所有静态资源 如js,jpg...等，   URL="/resources/文件路径  " -->
 	<!-- <mvc:resources location="/js/" mapping="/js/**"/>	 -->
@@ -37,6 +40,5 @@
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
 		<property name="suffix" value=".jsp" />
 	</bean>
-	
 	
 </beans>

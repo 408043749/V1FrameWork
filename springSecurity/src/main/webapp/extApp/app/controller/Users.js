@@ -11,11 +11,17 @@ Ext.define('pljFWV1.controller.Users',{
 		this.control({
 			'userList':{
 				itemdblclick:this.editUser
+			},
+			'userEdit button[action=save]':{
+				click:this.saveOrUpdate
 			}
 		});
 	},
 	editUser:function(grid,record){
 		var view = Ext.widget('userEdit');
 		view.down('form').loadRecord(record);
+	},
+	saveOrUpdate:function(){
+		alert('');
 	}
 })

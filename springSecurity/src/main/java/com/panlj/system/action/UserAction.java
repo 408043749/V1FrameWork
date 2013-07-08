@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.struts2.json.JSONResult;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -38,7 +39,17 @@ public class UserAction extends ModelAction<User>{
 		 model.addAttribute("userList", userList);
 		 pageHandle(model);//传递分页参数
 		 model.addAttribute("user", new User());//查询条件空对象
+		 
 		return "list";
+	}
+	
+	@RequestMapping("getUserListJson")
+	public  @ResponseBody  Object getUserListJson(HttpServletRequest request,HttpServletResponse response,Model model){
+		 List<User> userList =  null;
+		 userList =  findAll(null, buildPageRequest(request), userDao,model) .getContent();
+		 pageHandle(model);//传递分页参数
+		 //return "jsontournamenttemplate";
+		 return model;
 	}
 	
 	@RequestMapping("edit")

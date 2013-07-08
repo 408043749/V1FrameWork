@@ -1,6 +1,21 @@
 Ext.define('pljFWV1.controller.Users',{
 	extend:'Ext.app.Controller',
+	views:[
+	       'user.List',
+	       'user.Edit'
+	],
+	stores:[
+	        'Users'
+	],
 	init:function(){
-		alert('');
+		this.control({
+			'userList':{
+				itemdblclick:this.editUser
+			}
+		});
+	},
+	editUser:function(grid,record){
+		var view = Ext.widget('userEdit');
+		view.down('form').loadRecord(record);
 	}
 })

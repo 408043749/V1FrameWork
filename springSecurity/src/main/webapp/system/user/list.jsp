@@ -252,26 +252,3 @@
 	</div>
 </div>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/common/js_frame.js" ></script>
-<script type="text/javascript"  >
-$(function(){
-	/**
-	 * 模糊查询事件
-	 */
-	$('.typeaheadlike').typeahead({
-		source:function(query){
-			var dataSource = new Array();
-			$.ajax({ 
-			  url: "/system/user/getUserJson", 
-			  data:{query:query},
-			  async: false ,
-			  success:function(data){
-				  $.each(data.split(","),function(i){
-						dataSource.push(this);
-				  });
-			  }
-			});
-			return dataSource;
-		}
-	});
-});
-</script>

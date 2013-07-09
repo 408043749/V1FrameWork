@@ -1,18 +1,11 @@
-Ext.require('Ext.container.Viewport');
+Ext.Loader.setConfig({enabled: true});
 Ext.application({
     name: 'pljFWV1',//命名空间
     app:'app',
+	autoCreateViewport: true, 
     controllers:[
-        'Users'
+        'Main'
     ],
     launch: function() {
-        Ext.create('Ext.container.Viewport', {
-            layout: 'fit',
-            items: [
-                {
-                	xtype:'userList'
-                }
-            ]
-        });
     }
 });

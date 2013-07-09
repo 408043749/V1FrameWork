@@ -1,10 +1,10 @@
-Ext.define('pljFWV1.view.Header', {
+Ext.define('pljFWV1.view.South', {
 	extend : 'Ext.panel.Panel',
-	alias : 'widget.Header',
+	alias : 'widget.East',
 	title : '用户管理',
 	initComponent : function() {
 		Ext.applyIf(this,{
-			region:'north',
+			region:'south',
 		    title: 'Hello',
 		    width: 200,
 		    html: '<p>World!</p>',

@@ -4,7 +4,6 @@ Ext.application({
     app:'app',
 	autoCreateViewport: true, 
     controllers:[
-        'Main'
     ],
     launch: function() {
     }

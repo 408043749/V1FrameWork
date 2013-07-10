@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringUtils;
-import org.apache.struts2.json.JSONResult;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.panlj.system.dao.MenuDao;
 import com.panlj.system.dao.UserDao;
 import com.panlj.system.domain.User;
 
@@ -31,6 +31,9 @@ import com.panlj.system.domain.User;
 public class UserAction extends ModelAction<User>{
 	@Resource
 	private UserDao userDao;
+	
+	@Resource
+	private MenuDao menuDao;
 	
 	@RequestMapping("list")
 	public String list(@ModelAttribute("user") User user,HttpServletRequest request,HttpServletResponse response,Model model){

@@ -7,6 +7,8 @@ Ext.define('pljFWV1.view.East', {
 			region:'east',
 		    title: 'Hello',
 		    width: 200,
+            split: true,
+            collapsible: true,
 		    html: '<p>World!</p>',
 		    renderTo: Ext.getBody()
 			

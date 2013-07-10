@@ -7,6 +7,11 @@ Ext.define('pljFWV1.view.Center', {
 			region:'center',
 		    title: 'Hello',
 		    width: 200,
+		    split: true,
+            collapsible: true,
+            animCollapse: true,
+            margins: '0 5 0 0',
+            stateId: 'navigation-panel',
 		    html: '<p>World!</p>',
 		    renderTo: Ext.getBody()
 			

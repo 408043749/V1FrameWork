@@ -1,6 +1,7 @@
+
 Ext.define('pljFWV1.view.West', {
-	extend : 'Ext.tree.Panel',
-	alias : 'widget.East',
+	extend : 'Ext.panel.Panel',
+	alias : 'widget.frameWest',
 	initComponent : function() {
 		Ext.applyIf(this,{
 			 region: 'west',
@@ -16,18 +17,23 @@ Ext.define('pljFWV1.view.West', {
              margins: '0 0 0 5',
              layout: 'accordion',
              items: [{
-                 contentEl: 'west',
-                 title: 'Navigation',
-                 iconCls: 'nav' // see the HEAD section for style used
-             }, {
-                 title: 'Settings',
-                 html: '<p>Some settings in here.</p>',
-                 iconCls: 'settings'
-             }, {
-                 title: 'Information',
-                 html: '<p>Some info in here.</p>',
-                 iconCls: 'info'
-             }]
+                 title: '模块内容',
+                 layout:'fit',
+                 items:[{
+                	 xtype:'treepanel',
+                	 width: 200,
+            	    height: 150,
+            	    rootVisible: false,
+            	    renderTo: Ext.getBody()
+                 }]
+             },{
+                 title: '系统管理',
+                 html: 'Panel content!'
+             },{
+                 title: '文档帮助',
+                 html: 'Panel content!'
+             }],
+             renderTo: Ext.getBody()
 			
 		});
 		this.callParent(arguments);

@@ -7,6 +7,7 @@ Ext.define('pljFWV1.view.South', {
 			region:'south',
 		    title: 'Hello',
 		    width: 200,
+		    height:100,
 		    html: '<p>World!</p>',
 		    renderTo: Ext.getBody()
 			

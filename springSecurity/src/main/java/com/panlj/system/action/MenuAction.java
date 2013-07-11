@@ -30,9 +30,11 @@ public class MenuAction extends ModelAction<Menu>{
 	
 	@RequestMapping("getMenuByParentUuidJson")
 	public @ResponseBody Object getMenuByParentUuidJson(HttpServletRequest request,HttpServletResponse response,Model model){
-		List<Menu> menuList = menuDao.findByParent_Uuid("402883823fc912e3013fc91499f70000");
-		model.addAttribute("menulist", menuList);
+		List<Menu> menuList = menuDao.findByParent_Uuid("402880bf3fcbe55d013fcbe6f3610000");
+		//model.addAttribute("root", menuList);
+		model.addAttribute("root", menuDao.findByUuid("402880bf3fcbe55d013fcbe6f3610000"));
 		return model;
+		//return model;
 	}
 	
 

@@ -1,4 +1,4 @@
-
+Ext.require("pljFWV1.controller.West");
 Ext.define('pljFWV1.view.West', {
 	extend : 'Ext.panel.Panel',
 	alias : 'widget.frameWest',
@@ -21,6 +21,7 @@ Ext.define('pljFWV1.view.West', {
                  layout:'fit',
                  items:[{
                 	 xtype:'treepanel',
+                	 store:'Menu',
                 	 width: 200,
             	    height: 150,
             	    rootVisible: false,

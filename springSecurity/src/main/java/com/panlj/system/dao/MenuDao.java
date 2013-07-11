@@ -11,4 +11,5 @@ interface IMenuDaoExt<T>{
 
 public interface MenuDao extends JpaRepository<Menu,Long>,IMenuDaoExt<Menu>{
 	public List<Menu> findByParent_Uuid(String uuid);
+	public Menu findByUuid(String uuid);
 }

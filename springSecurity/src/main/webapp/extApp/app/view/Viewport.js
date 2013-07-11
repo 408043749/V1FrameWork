@@ -14,6 +14,8 @@ Ext.define('pljFWV1.view.Viewport', {
 				Ext.create('pljFWV1.view.South')
 			]
 		});
+		//var c = app.getController( 'west' );
+		
 		me.callParent(arguments);
 	}
 });

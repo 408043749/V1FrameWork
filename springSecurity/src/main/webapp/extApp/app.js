@@ -1,7 +1,7 @@
 Ext.Loader.setConfig({
 	enabled : true
 });
-Ext.application({
+var app = Ext.application({
 	name : 'pljFWV1',// 命名空间
 	app : 'app',
 	autoCreateViewport : true,

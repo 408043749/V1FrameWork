@@ -2,14 +2,16 @@ package com.panlj.system.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 
 import org.hibernate.annotations.GenericGenerator;
 
 @MappedSuperclass
-public abstract class AbstractTree implements Serializable{
+public abstract class AbstractTree<T> implements Serializable{
 
 	private static final long serialVersionUID = -5334980797651496255L;
 	
@@ -27,12 +29,18 @@ public abstract class AbstractTree implements Serializable{
 	/**
 	 * 是否叶子
 	 */
-	private Boolean isLeaf;
+	private Boolean leaf;
 	
 	/**
 	 * 树形UUID链
 	 */
 	private String treePath;
+	
+	/**
+	 * 父节点UUID
+	 */
+	@ManyToOne(fetch=FetchType.EAGER)
+	private T parent;
 	
 	/**
 	 * 是否启用
@@ -45,12 +53,13 @@ public abstract class AbstractTree implements Serializable{
 	private int sequence;
 
 
-	public Boolean getIsLeaf() {
-		return isLeaf;
+
+	public Boolean getLeaf() {
+		return leaf;
 	}
 
-	public void setIsLeaf(Boolean isLeaf) {
-		this.isLeaf = isLeaf;
+	public void setLeaf(Boolean leaf) {
+		this.leaf = leaf;
 	}
 
 	public String getTreePath() {
@@ -87,6 +96,22 @@ public abstract class AbstractTree implements Serializable{
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public T getParent() {
+		return parent;
+	}
+
+	public void setParent(T parent) {
+		this.parent = parent;
+	}
+
+	public String getUuid() {
+		return uuid;
+	}
+
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
 	}
 	
 	

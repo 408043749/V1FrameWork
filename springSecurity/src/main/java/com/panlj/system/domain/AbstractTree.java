@@ -25,6 +25,11 @@ public abstract class AbstractTree<T> implements Serializable{
 	 * 名称
 	 */
 	private String name;
+
+	/**
+	 * 名称2  专EXT设计
+	 */
+	private String text;	
 	
 	/**
 	 * 是否叶子
@@ -112,6 +117,14 @@ public abstract class AbstractTree<T> implements Serializable{
 
 	public void setUuid(String uuid) {
 		this.uuid = uuid;
+	}
+
+	public String getText() {
+		return text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
 	}
 	
 	

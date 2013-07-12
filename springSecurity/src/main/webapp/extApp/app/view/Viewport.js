@@ -4,8 +4,7 @@ Ext.define('pljFWV1.view.Viewport', {
 	hideBorders : false,
 	requires : [ 'pljFWV1.view.North'],
 	initComponent : function() {
-		var me = this;
-		Ext.apply(me, {
+		Ext.apply(this, {
 			items : [
 			    Ext.create('pljFWV1.view.North'),
 				Ext.create('pljFWV1.view.West'),
@@ -14,9 +13,7 @@ Ext.define('pljFWV1.view.Viewport', {
 				Ext.create('pljFWV1.view.South')
 			]
 		});
-		//var c = app.getController( 'west' );
-		
-		me.callParent(arguments);
+		this.callParent(arguments);
 	}
 });
 

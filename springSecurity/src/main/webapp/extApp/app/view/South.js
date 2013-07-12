@@ -3,14 +3,14 @@ Ext.define('pljFWV1.view.South', {
 	alias : 'widget.East',
 	title : '用户管理',
 	initComponent : function() {
-		Ext.applyIf(this,{
-			region:'south',
-		    title: 'Hello',
-		    width: 200,
-		    height:100,
-		    html: '<p>World!</p>',
-		    renderTo: Ext.getBody()
-			
+		Ext.applyIf(this, {
+			region : 'south',
+			title : 'Hello',
+			width : 200,
+			height : 100,
+			html : '<p>World!</p>',
+			renderTo : Ext.getBody()
+
 		});
 		this.callParent(arguments);
 	}

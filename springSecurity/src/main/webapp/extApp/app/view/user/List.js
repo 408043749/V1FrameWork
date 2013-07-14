@@ -3,7 +3,10 @@ Ext.define('pljFWV1.view.user.List', {
 	alias : 'widget.userList',
 	title : '用户管理',
 	store:'Users',
+	autoShow : true,
+	autoScroll:true,
 	initComponent : function() {
+		alert('list');
 		this.columns = [ {
 			header : 'Id',
 			dataIndex : 'id',

@@ -49,7 +49,8 @@ public class UserAction extends ModelAction<User>{
 	@RequestMapping("getUserListJson")
 	public  @ResponseBody  Object getUserListJson(HttpServletRequest request,HttpServletResponse response,Model model){
 		 List<User> userList =  null;
-		 userList =  findAll(null, buildPageRequest(request), userDao,model) .getContent();
+		 //userList =  findAll(null, buildPageRequest(request), userDao,model) .getContent();
+		 userList =  (List<User>)userDao.findAll();
 		 pageHandle(model);//传递分页参数
 		 //return "jsontournamenttemplate";
 		 return model;

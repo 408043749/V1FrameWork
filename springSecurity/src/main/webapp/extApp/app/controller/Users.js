@@ -21,7 +21,16 @@ Ext.define('pljFWV1.controller.Users',{
 		var view = Ext.widget('userEdit');
 		view.down('form').loadRecord(record);
 	},
-	saveOrUpdate:function(){
-		alert('');
+	saveOrUpdate:function(button){
+		var window = button.up('window')
+		var form = window.down('form');
+		form.submit({
+			url:'/system/user/save',
+			success:function(data){
+				var record = form.getRecord();
+				record.set(form.getValues());
+				window.close();
+			}
+		});
 	}
 })

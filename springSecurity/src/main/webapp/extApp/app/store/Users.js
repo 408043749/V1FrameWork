@@ -7,7 +7,7 @@ Ext.define('pljFWV1.store.Users', {
 		url:'/system/user/getUserListJson',
 		reader:{
 			type:'json',
-			root:'rows'
+			root:'userList'
 		}
 	}
 });

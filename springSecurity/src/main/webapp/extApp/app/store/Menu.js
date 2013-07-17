@@ -1,4 +1,5 @@
 Ext.define('pljFWV1.store.Menu', {
+    storeId:'menuStore',
 	extend : 'Ext.data.TreeStore',
 	model:'pljFWV1.model.Menu',
 	autoLoad:true,

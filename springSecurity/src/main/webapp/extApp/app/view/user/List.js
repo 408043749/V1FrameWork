@@ -6,7 +6,6 @@ Ext.define('pljFWV1.view.user.List', {
 	autoShow : true,
 	autoScroll:true,
 	initComponent : function() {
-		alert('list');
 		this.columns = [ {
 			header : 'Id',
 			dataIndex : 'id',

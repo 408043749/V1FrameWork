@@ -52,6 +52,8 @@ public class UserAction extends ModelAction<User>{
 		 //userList =  findAll(null, buildPageRequest(request), userDao,model) .getContent();
 		 userList =  (List<User>)userDao.findAll();
 		 pageHandle(model);//传递分页参数
+		 model.addAttribute("userList", userList);
+
 		 //return "jsontournamenttemplate";
 		 return model;
 	}
@@ -68,9 +70,9 @@ public class UserAction extends ModelAction<User>{
 	}
 	
 	@RequestMapping("save")
-	public @ResponseBody Object save(@ModelAttribute("user") User user,HttpServletRequest request,HttpServletResponse response,Model model){
-		userDao.save(user);
-		return "success";
+	public @ResponseBody Object save(HttpServletRequest request,HttpServletResponse response,Model model){
+		model.addAttribute("success", true);
+		return model;
 	}
 	
 	@RequestMapping("getUserJson")

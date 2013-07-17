@@ -19,7 +19,7 @@ public abstract class AbstractTree<T> implements Serializable{
 	@Id 
 	@GeneratedValue(generator="uuidGenerator")
 	@GenericGenerator(name="uuidGenerator", strategy = "uuid")
-	private String uuid;
+	private String id;
 	
 	/**
 	 * 名称
@@ -46,6 +46,11 @@ public abstract class AbstractTree<T> implements Serializable{
 	 */
 	@ManyToOne(fetch=FetchType.EAGER)
 	private T parent;
+	
+	/**
+	 * 是否展开
+	 */
+	private Boolean expanded;
 	
 	/**
 	 * 是否启用
@@ -111,12 +116,13 @@ public abstract class AbstractTree<T> implements Serializable{
 		this.parent = parent;
 	}
 
-	public String getUuid() {
-		return uuid;
+
+	public String getId() {
+		return id;
 	}
 
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getText() {
@@ -126,7 +132,15 @@ public abstract class AbstractTree<T> implements Serializable{
 	public void setText(String text) {
 		this.text = text;
 	}
-	
+
+	public Boolean getExpanded() {
+		return expanded;
+	}
+
+	public void setExpanded(Boolean expanded) {
+		this.expanded = expanded;
+	}
+
 	
 
 }

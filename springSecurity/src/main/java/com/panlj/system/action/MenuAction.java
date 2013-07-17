@@ -6,9 +6,11 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.panlj.system.dao.MenuDao;
@@ -29,10 +31,14 @@ public class MenuAction extends ModelAction<Menu>{
 	}
 	
 	@RequestMapping("getMenuByParentUuidJson")
-	public @ResponseBody Object getMenuByParentUuidJson(HttpServletRequest request,HttpServletResponse response,Model model){
-		List<Menu> menuList = menuDao.findByParent_Uuid("402883823fc912e3013fc91499f70000");
+	public @ResponseBody Object getMenuByParentUuidJson(@RequestParam(required=false) String node, HttpServletRequest request,HttpServletResponse response,Model model){
 		//model.addAttribute("root", menuList);
-		model.addAttribute("root", menuDao.findByUuid("402883823fc912e3013fc91499f70000"));
+		if(StringUtils.isNotEmpty(node) && !node.equals("0")){
+			List<Menu> menuList = menuDao.findByParent_Id(node);
+			return menuList;
+		}else{
+			model.addAttribute("root", menuDao.findById("402880bf3feadfb2013feae0e1f90000"));
+		}
 		return model;
 		//return model;
 	}

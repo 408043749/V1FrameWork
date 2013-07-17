@@ -1,0 +1,17 @@
+Ext.define('pljFWV1.controller.Menu',{
+	extend:'Ext.app.Controller',
+	views:[
+	       'menu.List'
+	],
+	stores:[
+	        'Menu'
+	],
+	init:function(){
+		debugger;
+		this.control({
+			'menuList':{
+				//itemdblclick:this.editUser
+			}
+		});
+	}
+})

@@ -20,7 +20,7 @@ Ext.define('pljFWV1.view.West', {
                  layout:'fit',
                  items:[{
                 	 xtype:'treepanel',
-                	 store:'Menu',
+                	 store:'TreeMenu',
                 	 width: 200,
             	    height: 150,
             	    rootVisible: false,

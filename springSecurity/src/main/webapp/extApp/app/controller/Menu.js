@@ -1,13 +1,15 @@
+
+
 Ext.define('pljFWV1.controller.Menu',{
 	extend:'Ext.app.Controller',
 	views:[
 	       'menu.List'
 	],
+	models: ['Menu'],
 	stores:[
-	        'Menu'
+	        'TreeMenu','TreeMenuGrid'
 	],
 	init:function(){
-		debugger;
 		this.control({
 			'menuList':{
 				//itemdblclick:this.editUser

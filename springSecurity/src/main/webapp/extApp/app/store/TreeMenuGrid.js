@@ -1,4 +1,4 @@
-Ext.define('pljFWV1.store.Menu', {
+Ext.define('pljFWV1.store.TreeMenuGrid', {
     storeId:'menuStore',
 	extend : 'Ext.data.TreeStore',
 	model:'pljFWV1.model.Menu',

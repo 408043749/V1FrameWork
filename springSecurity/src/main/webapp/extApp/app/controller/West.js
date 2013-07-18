@@ -3,7 +3,7 @@ var westContoller = Ext.define('pljFWV1.controller.West', {
 	id:'west',
 	views : [ 'West' ],
 	stores:[
-	        'Menu'
+	        'TreeMenu'
 	],
 	init:function(app){
 		//alert('west');

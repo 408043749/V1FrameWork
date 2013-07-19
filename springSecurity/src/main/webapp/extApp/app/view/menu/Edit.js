@@ -1,6 +1,6 @@
-Ext.define('pljFWV1.view.user.Edit', {
+Ext.define('pljFWV1.view.menu.Edit', {
 	extend : 'Ext.window.Window',
-	alias : 'widget.userEdit',
+	alias : 'widget.menuEdit',
 	title : 'Edit User',
 	layout : 'fit',
 	autoShow : true,

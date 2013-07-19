@@ -1,2 +1,6 @@
 eclipse.preferences.version=1
+encoding//src/main/webapp/common/js_frame.js=UTF-8
+encoding//src/main/webapp/extApp/app/controller/Users.js=UTF-8
+encoding//src/main/webapp/extApp/app/view/user/Edit.js=UTF-8
+encoding//src/main/webapp/extApp/app/view/user/List.js=UTF-8
 encoding//src/main/webapp/index.jsp=UTF-8

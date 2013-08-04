@@ -15,6 +15,6 @@
 		class="org.springframework.flex.core.io.JpaHibernateConfigProcessor">
 	</bean>
  -->
- <flex:message-broker/> 
 
+	<flex:message-broker services-config-path="classpath:flex/services-config.xml"  />    
 </beans>

@@ -14,6 +14,7 @@
 	<http pattern="/lib/**" security="none" />
 	<http pattern="/images/**" security="none" />
 	<http pattern="/flex/bin-debug/**" security="none" />
+	<http pattern="/messagebroker/**" security="none" />
 	<http pattern="/js/**" security="none" />
 	<http pattern="/index.jsp" security="none" />
 	<http pattern="/system/index" security="none" />

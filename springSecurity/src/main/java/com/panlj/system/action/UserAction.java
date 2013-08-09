@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringUtils;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.flex.remoting.RemotingDestination;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -27,7 +28,8 @@ import com.panlj.system.dao.UserDao;
 import com.panlj.system.domain.User;
 
 @Controller
-@RequestMapping("/system/user/*")
+@RequestMapping("/spring/system/user/*")
+@RemotingDestination(channels={"my-amf"},value="helloWorld")
 public class UserAction extends ModelAction<User>{
 	@Resource
 	private UserDao userDao;
@@ -102,5 +104,9 @@ public class UserAction extends ModelAction<User>{
 				return null;
 			}
 		};
+	}
+	
+	public String helloWorld(){
+		return "hellow";
 	}
 }

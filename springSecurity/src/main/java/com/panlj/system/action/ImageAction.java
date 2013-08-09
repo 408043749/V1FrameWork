@@ -16,7 +16,7 @@ import com.octo.captcha.service.image.DefaultManageableImageCaptchaService;
 import com.panlj.system.util.CaptchaSinglgeFactory;
 
 @Controller
-@RequestMapping("/image/*")
+@RequestMapping("/spring/image/*")
 public class ImageAction {
 	
 	@RequestMapping("captcha")

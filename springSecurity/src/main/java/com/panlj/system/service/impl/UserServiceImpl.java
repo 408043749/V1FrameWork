@@ -7,9 +7,6 @@ import com.panlj.system.service.UserService;
 
 
 @Service
-@RemotingDestination(channels={"my-amf"},value="helloWorld")
 public class UserServiceImpl implements UserService{
-	public String helloWorld(){
-		return "hellow";
-	}
+
 }

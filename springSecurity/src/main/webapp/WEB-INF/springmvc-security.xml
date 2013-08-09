@@ -19,9 +19,10 @@
 	<http pattern="/index.jsp" security="none" />
 	<http pattern="/system/index" security="none" />
 	<http pattern="/image/captcha" security="none" />
+	<http pattern="/spring/**" security="none" />
 	
 	<http auto-config="true">
-		<intercept-url pattern="/**" access="ROLE_ADMIN,ROLE_USER" />
+		<intercept-url pattern="/**" access="ROLE_ADMIN,ROLE_USER,ROLE_ANONYMOUS" />
 		
 		<form-login login-page="/index.jsp" default-target-url="/extApp/index.jsp" 
 			authentication-failure-url="/index.jsp?errorCode=1"  always-use-default-target="true" />
